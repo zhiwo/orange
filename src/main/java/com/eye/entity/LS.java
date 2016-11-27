@@ -8,7 +8,7 @@ package com.eye.entity;
  * copyright: fengyan
  */
 public class LS {
-    private int Id;
+    private int id;
     private String lsId;
     private String lsName;
     private String lsPinYin;

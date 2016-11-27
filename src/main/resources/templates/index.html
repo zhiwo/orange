@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+${name}——>世界
+<p th:each="bs:${list}"></p>
+<table>
+    <tr th:each="BS:${list}">
+        <td th:text="${BS.BS_ID}">1</td>
+        <td th:text="${BS.BS_NAME}">a</td>
+        <td th:text="${BS.BS_PINGYIN}">pinyin</td>
+        <td th:text="${BS.BS_LONGITUDE}">1</td>
+        <td th:text="${BS.BS_LATITUDE}">1</td>
+        <td th:text="${BS.BS_ADDRESS}">地球村</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -8,4 +8,15 @@ package com.eye.entity;
  * copyright: fengyan
  */
 public class User {
+    public int id;
+    public int uId;
+    public String uName;
+    public  int uPhone;
+    public  int uSecondPhone;
+    public int uThreePhone;
+    public String uEmail;
+    public String uPassword;
+    public String uRdcId;
+    public int uABID;
+    public int uIntegral;
 }
