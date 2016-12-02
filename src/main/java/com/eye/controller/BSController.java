@@ -2,6 +2,7 @@ package com.eye.controller;
 
 
 import com.eye.entity.BS;
+import com.eye.service.BSService;
 import com.eye.service.impl.BSServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
@@ -33,13 +34,21 @@ public class BSController {
 //        return map;
 //    }
 
-     @Autowired
-     private BSServiceImpl bsImpl;
+    @Autowired
+    private BSService bsService;
+
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String doBSPage(List<BS> list, Model mode) {
-        list=bsImpl.getBSList();
-       mode.addAttribute("list",list);
+        list=bsService.getBSList();
+        mode.addAttribute("list",list);
 
         return "";
     }
+
+    @RequestMapping(value = "/")
+    public String login(){
+        return "login";
+    }
+
+
 }
