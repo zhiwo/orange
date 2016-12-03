@@ -16,12 +16,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .authorizeRequests()
+                    .antMatchers("/", "/home").authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .failureUrl("/login?error=1")
-                .loginProcessingUrl("/j_security_check")
-                .usernameParameter("j_username")
-                .passwordParameter("j_password");
+                    .loginPage("/login")
+                    .permitAll()
+                    .and()
+                .logout()
+                    .permitAll();
     }
 
     @Autowired
