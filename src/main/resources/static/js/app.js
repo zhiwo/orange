@@ -102,7 +102,7 @@ $(function() {
 
     $('#login-form').validate(loginValidationSettings);
 })
-//LoginForm validation
+//ResetForm validation
 $(function() {
 	if (!$('#reset-form').length) {
         return false;
@@ -133,7 +133,7 @@ $(function() {
 
     $('#reset-form').validate(resetValidationSettings);
 })
-//LoginForm validation
+//SignupForm validation
 $(function() {
 	if (!$('#signup-form').length) {
         return false;
@@ -1052,6 +1052,20 @@ $(function() {
 	});
 
 });
+//LoginForm validation
+$(function() {
+	if (!$('.form-control').length) {
+        return false;
+    }
+
+    $('.form-control').focus(function() {
+		$(this).siblings('.input-group-addon').addClass('focus');
+	});
+
+	$('.form-control').blur(function() {
+		$(this).siblings('.input-group-addon').removeClass('focus');
+	});
+});
 $(function(){
 
 	// set sortable options
@@ -1130,20 +1144,6 @@ $(function() {
     });
 
 });
-//LoginForm validation
-$(function() {
-	if (!$('.form-control').length) {
-        return false;
-    }
-
-    $('.form-control').focus(function() {
-		$(this).siblings('.input-group-addon').addClass('focus');
-	});
-
-	$('.form-control').blur(function() {
-		$(this).siblings('.input-group-addon').removeClass('focus');
-	});
-});
 $(function() {
 
 	$(".wyswyg").each(function() {
@@ -1183,6 +1183,16 @@ $(function () {
 	});
 	
 });
+$(function() {
+	$('.nav-profile > li > a').on('click', function() {
+		var $el = $(this).next();
+
+		animate({
+			name: 'flipInX',
+			selector: $el
+		});
+	});
+})
 var modalMedia = {
 	$el: $("#modal-media"),
 	result: {},
@@ -1206,16 +1216,6 @@ var modalMedia = {
 		}
 	}
 };
-$(function() {
-	$('.nav-profile > li > a').on('click', function() {
-		var $el = $(this).next();
-
-		animate({
-			name: 'flipInX',
-			selector: $el
-		});
-	});
-})
 $(function () {
 
 	// Local storage settings
@@ -1294,10 +1294,10 @@ $(function () {
 	function setThemeState() {
 		// set theme type
 		if (themeSettings.themeName) {
-			$styleLink.attr('href', 'css/app-' + themeSettings.themeName + '.css');
+			$styleLink.attr('href', '/css/app-' + themeSettings.themeName + '.css');
 		}
 		else {
-			$styleLink.attr('href', 'css/app.css');
+			$styleLink.attr('href', '/css/app.css');
 		}
 
 		// App classes

@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
-<div th:replace="fragment :: head"></div>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
 
 <body>
-<div class="main-wrapper">
-    <div class="app" id="app">
 
-        <div th:replace="fragment :: header"></div>
-
-        <div th:replace="fragment :: sidebar"></div>
-
-        <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-        <article class="content dashboard-page">
-            <div style="height: 1000px;">
-                asd
-            </div>
-
-        </article>
-
-        <div th:replace="fragment :: footer"></div>
-
-        <div th:replace="fragment :: modal"></div>
-    </div>
-</div>
-
-<div th:replace="fragment :: ref_js"></div>
+<section layout:fragment="content">
+    <article class="content dashboard-page">
+        欢迎页
+    </article>
+</section>
 
 </body>
 
