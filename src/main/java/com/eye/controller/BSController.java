@@ -37,18 +37,12 @@ public class BSController {
     @Autowired
     private BSService bsService;
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/index222", method = RequestMethod.GET)
     public String doBSPage(List<BS> list, Model mode) {
         list=bsService.getBSList();
         mode.addAttribute("list",list);
 
         return "";
     }
-
-    @RequestMapping(value = "/")
-    public String login(){
-        return "login";
-    }
-
 
 }
