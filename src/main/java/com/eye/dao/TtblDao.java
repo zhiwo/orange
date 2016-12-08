@@ -3,6 +3,7 @@ package com.eye.dao;
 import com.eye.entity.TTBL;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * 用户积分
  */
+@Mapper
 public interface TtblDao {
     @Select("select * from net_ttbl")
     public List<TTBL> getList();
