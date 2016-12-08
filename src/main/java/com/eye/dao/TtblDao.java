@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 用户积分
  */
-public interface TTBLDao {
+public interface TtblDao {
     @Select("select * from net_ttbl")
     public List<TTBL> getList();
 
