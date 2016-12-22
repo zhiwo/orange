@@ -2,33 +2,29 @@ package com.eye.controller;
 
 
 import com.eye.entity.BS;
-import com.eye.service.BSService;
-import com.eye.service.impl.BSServiceImpl;
+import com.eye.service.BsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by holdlg on 2016/11/22.
  */
 @Controller
-public class BSController {
+@RequestMapping(value = "/bs")
+public class BsController {
 
 
     @Autowired
-    private BSService bsService;
+    private BsService bsService;
 
-    @RequestMapping(value = "/bs/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String toBsListPage(Model mode) {
 //        list=bsService.getBSList();
         List<BS> list = new ArrayList<BS>();
@@ -50,5 +46,22 @@ public class BSController {
 
         return "bs/list";
     }
+
+    @RequestMapping(value = "/add")
+    public String add() {
+        return "bs/add";
+    }
+
+    @RequestMapping(value = "/update")
+    public String update() {
+        return "bs/update";
+    }
+
+    @RequestMapping(value = "/delete")
+    public String delete() {
+        return "bs/delete";
+    }
+
+
 
 }

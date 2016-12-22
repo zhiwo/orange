@@ -9,7 +9,7 @@ import java.util.List;
  * 光交箱
  */
 @Mapper
-public interface LDBDao {
+public interface LdbDao {
 
     @Select(value = "select * from net_ldb")
     public List<LDB> getLDBList();

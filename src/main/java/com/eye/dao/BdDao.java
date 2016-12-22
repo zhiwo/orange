@@ -9,7 +9,7 @@ import java.util.List;
  * 宽带表
  */
 @Mapper
-public interface BDDao {
+public interface BdDao {
     @Select(value = "select * from net_bd")
     public List<BD> getBDList();
 

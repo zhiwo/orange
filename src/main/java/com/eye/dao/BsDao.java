@@ -9,7 +9,7 @@ import java.util.List;
  * Created by holdlg on 2016/11/23.
  */
 @Mapper
-public interface BSDao {
+public interface BsDao {
 
     @Select(value = "select * from net_bs")
     public List<BS> findAllBSList();

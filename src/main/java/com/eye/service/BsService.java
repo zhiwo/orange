@@ -5,13 +5,13 @@ import com.eye.entity.BS;
 import java.util.List;
 
 /**
- * BSService
- * description: com.eye.service.BSService
+ * BsService
+ * description: com.eye.service.BsService
  * author: holdlg
  * date: 2016/11/20
  * copyright: fengyan
  */
-public interface BSService {
+public interface BsService {
 
     public List<BS> getBSList();
 }
